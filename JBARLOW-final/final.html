@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interactive Task Manager</title>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center; /*pls be in the center of th epage i beg u*/
+                align-items: center;
+                background-color: #ffe6ff;
+                font-family: Comic Sans MS, Chalkboard SE, Comic Neue; /*i really like handwritten fonts*/
+            }
+
+            .floating-container {
+                background-color: white;
+                padding: 20px 30px;
+                border-radius: 5px;
+                max-width: 750px;
+                text-align: center; /*this better work i stg*/
+            }
+
+            header {
+                background-color: #ff80df;
+                color: white;
+                padding: 8px;
+                text-align: center;
+            }
+
+            .bordered-header {
+                border: 4px solid #990073;
+                border-radius: 8px;
+                margin: 0;
+            }
+
+            .column {
+                float: left;
+                width: 50%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /* i want this to have the tasks insclasse it*/
+            #taskmanager {
+                width: 300px;
+                height: 355px;
+                border: 3px solid #ffb3ec;
+                padding: 10px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                background-color: #fff5fd;
+                font-family: Comic Sans MS, Chalkboard SE, Comic Neue;
+                font-size: 14px;
+                margin: 0 auto;
+                text-align: left;
+            }
+
+            .section-heading {
+                border-bottom: 2px solid black;
+                padding-bottom: 0px;
+            }
+
+            .section-heading h2 {
+                margin: 0;
+            }
+
+            form {
+                text-align: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="floating-container">
+            <div class="bordered-header">
+                <header><h1>Interactive Task Manager</h1></header>
+            </div>
+
+            <div class="row section-heading">
+                <div class="column">
+                    <h2>Input</h2>
+                </div>
+
+                <div class="column">
+                    <h2>Task</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <p>Hi!
+                        <br>This is where you'll set up your tasks! Here you can organize your tasks, modify them, and delete them. I've made a handy dandy manager for you to use, and anything you change will be in the console! If you change your mind, you can click your task, put new information, and hit edit to officially change it!</p>
+                    <form id="taskForm">
+                        <label for="taskName">Task:</label>
+                        <input type="text" id="taskName" name="taskName"><br><br>
+
+                        <label for="taskImp">Importance:</label>
+                        <input type="checkbox" id="taskImp" name="taskImp"><br><br>
+
+                        <label for="taskPri">Priority:</label>
+                        <select id="taskPri" name="taskPri">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                            </select><br><br>
+
+                        <label for="taskCom">Completed:</label>
+                        <input type="checkbox" id="taskCom" name="taskCom"><br><br>
+                    </form>
+                    <button id="buttonPush">Submit Task</button>
+                </div>
+
+                <div class="column">
+                    <div id="taskmanager">
+                    </div>
+                    <button id="buttonEdit">Edit Task</button>
+                    <button id="buttonDel">Delete Task</button>
+                </div>
+            </div>
+        </div>
+        <script src="final.js"></script>
+    </body>
+</html>
